@@ -1,0 +1,16 @@
+package com.choonham;
+
+import java.util.Scanner;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		System.out.println("검색할 도서를 입력하세요.");
+		Scanner sc = new Scanner(System.in);
+		String inputString = sc.next();
+		MethodClass mc = new MethodClass();
+		mc.search(inputString);
+		
+	}
+
+}

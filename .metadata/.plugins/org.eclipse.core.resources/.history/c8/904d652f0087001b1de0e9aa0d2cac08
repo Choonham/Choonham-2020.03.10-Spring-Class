@@ -1,0 +1,18 @@
+package board_prj;
+
+import java.util.Scanner;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String way = sc.next();
+		String inputString = sc.next();
+		BoardClass bcOutput = new BoardClass();
+		MethodClass mc = new MethodClass();
+		bcOutput = mc.search(way, inputString);
+		System.out.println(bcOutput.author);
+	}
+	
+
+}

@@ -1,0 +1,26 @@
+package com.choonham;
+
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashMap;
+
+public class Solution {
+	public boolean solution(String[] phone_book) {
+		boolean answer = true;
+		HashMap<String, String> wordMap = new HashMap<String , String>();
+		Arrays.sort(phone_book, new Comparator<String>() {
+			@Override
+			public int compare(String o1, String o2) {
+				return o2.length() - o1.length();
+			}
+		});
+		
+		System.out.println(Arrays.toString(phone_book));
+		
+		for(String number : phone_book) {
+			
+		}
+		
+		return answer;
+	}
+}

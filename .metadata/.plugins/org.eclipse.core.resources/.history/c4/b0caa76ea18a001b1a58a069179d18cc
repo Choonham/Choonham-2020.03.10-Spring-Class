@@ -1,0 +1,17 @@
+package com.choonham;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+	public static void main(String[] args)  {
+		byte a = 64;
+		byte b = 64;
+		byte result = a + b;
+		System.out.println(“result = “ + result );
+		
+
+	}
+	
+}

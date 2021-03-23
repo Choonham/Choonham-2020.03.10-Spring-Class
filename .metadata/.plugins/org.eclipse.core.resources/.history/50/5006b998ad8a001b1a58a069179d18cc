@@ -1,0 +1,32 @@
+package com.choonham;
+
+import java.util.Arrays;
+import java.util.HashMap;
+
+public class Solution {
+	public int[] solution(String[] genres, int[] plays) {
+		int[] answer = {};
+		HashMap<String, Integer> hmFirst = new HashMap<>();
+		HashMap<String, Integer> hmSecond = new HashMap<>();
+		
+		for(int i = 0; i < genres.length; i++) {
+			if(hmFirst.get(genres[i])==null) {
+				hmFirst.put(genres[i], plays[i]);
+			} else if(plays[i] > hmFirst.get(genres[i])) {
+				hmFirst.replace(genres[i], plays[i]);
+			}
+		}
+		
+		for(int i = 0; i < genres.length; i++) {
+			if(hmSecond.get(genres[i])==null) {
+				hmSecond.put(genres[i], plays[i]);
+			} else if(plays[i] > hmSecond.get(genres[i]) && hmFirst.get(genres[i]) > plays[i]) {
+				hmSecond.replace(genres[i], plays[i]);
+			}
+		}
+		
+		System.out.println(hmSecond);
+		
+		return answer;
+	}
+}

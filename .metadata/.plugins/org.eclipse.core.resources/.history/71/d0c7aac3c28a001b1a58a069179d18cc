@@ -1,0 +1,49 @@
+package com.choonham;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+public class Solution {
+	public int[]  solution(String[] genres, int[] plays) {
+		HashMap<String, GenresInfo> map = new HashMap<>();
+		for(int i = 0; i < genres.length; i++) {
+			if(!map.containsKey(genres[i])) {
+				
+			}
+		}
+
+		return answer;
+	}
+}
+
+class GenresInfo implements Comparable<GenresInfo> {
+	public int totalPlays; 
+	public ArrayList<SongInfo> songInfoList;
+	public GenresInfo(int totalPlays, ArrayList<SongInfo> songInfo) {
+		this.totalPlays = totalPlays;
+		this.songInfoList = songInfo;
+	}
+	
+	@Override
+	public int compareTo(GenresInfo o) {  //내림차순
+		if(totalPlays < o.totalPlays) {
+			return 1; 
+		}
+		return -1;
+	}
+	
+	
+}
+
+class SongInfo {
+
+	public int plays; // 조회수
+	public int index; // 인덱스
+
+	public SongInfo(int plays, int index) {
+		this.plays = plays;
+		this.index = index;
+	}
+
+}

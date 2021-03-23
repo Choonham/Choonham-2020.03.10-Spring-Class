@@ -1,0 +1,17 @@
+package board_prj;
+
+import java.util.ArrayList;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		ArrayList<String> alphabet = new ArrayList<String>();
+		String[] alphabetArray = {"A", "B", "C", "D", "E", "F", "G","H","I,","J","K","L","M","N", "O", "P", "Q", "R", "S", "T", "U", "Y", "W","X","Z"};
+		for(int i = 0; i < alphabetArray.length; i++) {
+			alphabet.add(alphabetArray[i]);
+		}
+		System.out.println(alphabetArray.length);
+		
+	}
+
+}

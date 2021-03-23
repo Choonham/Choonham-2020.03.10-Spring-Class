@@ -1,0 +1,9 @@
+package board_prj;
+
+public class BoardClass {
+
+	public BoardClass() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,17 @@
+package com.choonham;
+
+public class MethodClass {
+
+	public MethodClass() {
+	}
+	
+	public void search(String inputString) {
+		DataClass dc = new DataClass();
+		for(int i = 0; i < dc.bcArray.length; i++) {
+			if(dc.bcArray[i].title.contains(inputString)) {
+				System.out.println(dc.bcArray[i].title + "의 정보:");
+			}
+		}
+	}
+
+}

@@ -1,0 +1,23 @@
+package com.choonham;
+
+import java.util.HashMap;
+
+public class Solution {
+	public int[] solution(String[] genres, int[] plays) {
+		int[] answer = {};
+		HashMap<String, Integer> hmFirst = new HashMap<>();
+		HashMap<String, Integer> hmSecond = new HashMap<>();
+		
+		for(int i = 0; i < genres.length; i++) {
+			if(hmFirst.get(genres[i])==null) {
+				hmFirst.put(genres[i], plays[i]);
+			} else if(plays[i] > hmFirst.get(genres[i])) {
+				hmFirst.replace(genres[i], plays[i]);
+			}
+		}
+		
+		System.out.println(hmFirst);
+		
+		return answer;
+	}
+}

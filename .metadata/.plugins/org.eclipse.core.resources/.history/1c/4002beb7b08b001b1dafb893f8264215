@@ -1,0 +1,32 @@
+package com.choonham;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+
+public class MethodClass {
+	private static DataClass dc = null;
+
+	public MethodClass() {
+	}
+
+	/** MainClass의 main() 내부로 부터 읽어들일 파일의 경로와 이름을 전달 받아 **/ 
+	/** DataClass 의 멤버(ArrayList) 에 추가  **/
+	public static void readBooksData(String uri) {
+		FileReader fr = null;
+		BufferedReader br = null;
+		BookClass o = null;
+		
+		String one = "";
+		String[] temp = null;
+		br.readLine();
+		
+	} // readBooksData() END
+
+	/** DataClass 의 멤버(ArrayList) 에 추가된 데이터를 이용하여**/
+	/**  실제 html 파일의  내부 태그들을 완성 **/
+	public static String makeBooksHTML() {
+
+		return null;
+	} // makeBooksHTML() END
+
+} // class END

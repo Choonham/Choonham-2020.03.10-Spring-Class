@@ -1,0 +1,13 @@
+package com.choonham;
+
+public class BookClass {
+	
+	String title, author, press, image;
+	int price, dc;
+	public BookClass() {
+
+	}
+	
+	public BookClass(String title, String author, String press, int price, )
+
+}

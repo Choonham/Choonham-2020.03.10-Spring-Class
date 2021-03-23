@@ -1,0 +1,9 @@
+package com.choonham;
+
+public class BookClass {
+
+	public BookClass() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

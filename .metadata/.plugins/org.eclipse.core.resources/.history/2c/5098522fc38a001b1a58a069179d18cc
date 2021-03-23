@@ -1,0 +1,100 @@
+package com.choonham;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map.Entry;
+
+public class Solution {
+	public int[]  solution(String[] genres, int[] plays) {
+		HashMap<String, GenresInfo> map = new HashMap<>();
+		for(int i = 0; i < genres.length; i++) {
+			if(!map.containsKey(genres[i])) {
+				map.put(genres[i], new GenresInfo(plays[i], new ArrayList<SongInfo>()));
+				map.get(genres[i]).songInfoList.add(new SongInfo(plays[i], i));
+			} else {
+				map.replace(genres[i], new GenresInfo(map.get(genres[i]).totalPlays + plays[i],  new ArrayList<SongInfo>()));  
+				map.get(genres[i]).songInfoList.add(new SongInfo(plays[i], i));
+			}
+		}
+		
+		class SongInfoListSort implements Comparator<SongInfo>{
+			@Override
+			public int compare(SongInfo o1, SongInfo o2) {
+
+				if (o1.plays < o2.plays
+						|| (o1.plays == o2.plays && o1.plays > o2.plays)) {
+					return 1;
+				}
+
+				return -1;
+			}
+		}
+		
+		GenresInfo[] genresInfoList = new GenresInfo[map.size()];
+		int k = 0;
+		for (Entry<String, GenresInfo> e : map.entrySet()) {
+
+			genresInfoList[k++] = e.getValue();
+
+			e.getValue().songInfoList.sort(new SongInfoListSort());
+		}
+		Arrays.sort(genresInfoList);
+		ArrayList<Integer> result = new ArrayList<>();
+		for (GenresInfo g : genresInfoList) {
+
+			ArrayList<SongInfo> list = g.songInfoList;
+			int size = list.size();
+
+			// 1개일 경우
+			if (size == 1) {
+				result.add(list.get(0).index);
+
+				// 2개일 경우
+			} else {
+				for (int i = 0; i < 2; i++) {
+					result.add(list.get(i).index);
+				}
+			}
+		}
+
+		int resultSize = result.size();
+		int[] answer = new int[resultSize];
+		for (int i = 0; i < resultSize; i++) {
+			answer[i] = result.get(i);
+		}
+		return answer;
+	}
+}
+
+class GenresInfo implements Comparable<GenresInfo> {
+	public int totalPlays; 
+	public ArrayList<SongInfo> songInfoList;
+	public GenresInfo(int totalPlays, ArrayList<SongInfo> songInfo) {
+		this.totalPlays = totalPlays;
+		this.songInfoList = songInfo;
+	}
+	
+	@Override
+	public int compareTo(GenresInfo o) {  //내림차순
+		if(totalPlays < o.totalPlays) {
+			return 1; 
+		}
+		return -1;
+	}
+	
+	
+}
+
+class SongInfo {
+
+	public int plays; // 조회수
+	public int index; // 인덱스
+
+	public SongInfo(int plays, int index) {
+		this.plays = plays;
+		this.index = index;
+	}
+
+}

@@ -1,0 +1,12 @@
+package com.choonham;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class Solution {
+	public ArrayList<Integer> solution(String[] genres, int[] plays) {
+
+
+		return answer;
+	}
+}

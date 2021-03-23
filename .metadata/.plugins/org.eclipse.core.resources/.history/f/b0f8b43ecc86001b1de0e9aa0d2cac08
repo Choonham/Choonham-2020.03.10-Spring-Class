@@ -1,0 +1,10 @@
+package com.choonham;
+
+public class DataClass {
+	
+	BookClass[] bcArray = new BookClass[15];
+	public DataClass() {
+		
+	}
+	
+}
